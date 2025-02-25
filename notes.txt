@@ -1,0 +1,16 @@
+Loading screen:
+photo of characters
+counts to 10
+
+Lobby:
+choose character
+ play button (to a zoom in photo - loading)
+
+Fight Screen:
+setting/background
+2 characters (p1 and p2)
+each character has a health bar
+winner annimation/text
+this player scored
+
+
