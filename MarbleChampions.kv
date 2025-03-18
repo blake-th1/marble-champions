@@ -4,14 +4,11 @@
     HomeScreenCanvas:
         FloatLayout:
             Image:
-                source: 'personal_portrait.png'
+                source: 'mr death.png'
                 allow_stretch: True
-                keep_ratio: True
-                size_hint_y: None
-                size_hint_x: None
-                width: self.parent.width
-                height: self.parent.width/self.image_ratio
-                pos_hint: {"center_x":0.5, "center_y":0.2}
+                keep_ratio: False  # Allow the image to stretch and fill the screen
+                size_hint: 1, 1  # Fill the entire screen
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}  # Center the image
             MDLabel:
                 adaptive_size: True
                 pos_hint: {"center_x":0.5, "center_y":0.8}
@@ -20,139 +17,31 @@
                 font_style: "H2"
 
 
-            MDRectangleFlatButton:
-                adaptive_size: True
-                pos_hint: {"center_x":0.5, "center_y":0.6}
-                text: "My "
-                font_size: "20sp"
-                on_press: app.root.current = 'Lobby'
+
 
             MDRectangleFlatButton:
                 adaptive_size: True
-                pos_hint: {"center_x":0.5, "center_y":0.55}
-                text: "My Fight"
+                pos_hint: {"center_x":0.5, "center_y":0.25}
+                text: "play"
                 font_size: "20sp"
-                on_press: app.root.current = 'Fight'
+                on_press: app.root.current = 'lobby'
+                md_bg_color: 1, 1, 1, 1  # Change background color to white
+                text_color: 0, 0, 0, 1  # Change text color to black
 
 <LobbyScreen>:
     id: lobby
     LobbyScreenCanvas:
         FloatLayout:
             MDTopAppBar:
-                title: "My Lobby"
                 left_action_items: [["home", lambda x: app.go_home()]]
                 pos_hint: {"top": 1}
+            Image:
+                source: 'Butt background.jpg.avif'
+                allow_stretch: True
+                keep_ratio: False  # Allow the image to stretch and fill the screen
+                size_hint: 1, 1  # Fill the entire screen
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}  # Center the image
 
-            MDGridLayout:
-                cols: 2  # 🔹 2 columns
-                rows: 3  # 🔹 3 rows
-                spacing: "10dp"
-                padding: "10dp"
-                size_hint: 1, 0.8
-                pos_hint: {"center_x": 0.5, "center_y": 0.45}
-
-                # 🔹 Hobby 1
-                BoxLayout:
-                    orientation: "vertical"
-                    spacing: "4dp"
-                    Image:
-                        source: "armorer.jpg"
-                        size_hint_y: None
-                        height: self.width
-                        allow_stretch: True
-                        keep_ratio: True
-                    MDLabel:
-                        text: "Armorer Helmet"
-                        halign: "center"
-                        size_hint_y: None
-                        height: "20dp"
-
-                # 🔹 Hobby 2
-                BoxLayout:
-                    orientation: "vertical"
-                    spacing: "4dp"
-                    Image:
-                        source: "daredevil.jpg"
-                        size_hint_y: None
-                        height: self.width
-                        allow_stretch: True
-                        keep_ratio: True
-                    MDLabel:
-                        text: "Daredevil Helmet"
-                        halign: "center"
-                        size_hint_y: None
-                        height: "20dp"
-
-                # 🔹 Hobby 3
-                BoxLayout:
-                    orientation: "vertical"
-                    spacing: "4dp"
-                    Image:
-                        source: "PXL_20211010_153001158.MP.jpg"
-                        size_hint_y: None
-                        height: self.width
-                        allow_stretch: True
-                        keep_ratio: True
-
-                    MDLabel:
-                        text: "Mandalorian Suit"
-                        halign: "center"
-                        size_hint_y: None
-                        height: "20dp"
-
-
-                # 🔹 Hobby 4
-                BoxLayout:
-                    orientation: "vertical"
-                    spacing: "8dp"
-                    Image:
-                        source: "fennac_shand_sq.jpg"
-                        size_hint_y: None
-                        height: self.width
-                        allow_stretch: True
-                        keep_ratio: True
-
-                    MDLabel:
-                        text: "Fennac Shand Suit"
-                        halign: "center"
-                        size_hint_y: None
-                        height: "20dp"
-
-
-                # 🔹 Hobby 5
-                BoxLayout:
-                    orientation: "vertical"
-                    spacing: "4dp"
-                    Image:
-                        source: "taskmaster.jpg"
-                        size_hint_y: None
-                        height: self.width
-                        allow_stretch: True
-                        keep_ratio: True
-
-                    MDLabel:
-                        text: "Taskmaster Suit"
-                        halign: "center"
-                        size_hint_y: None
-                        height: "20dp"
-
-
-                # 🔹 Hobby 6
-                BoxLayout:
-                    orientation: "vertical"
-                    spacing: "4dp"
-                    Image:
-                        source: "captain_rex_sq.jpg"
-                        size_hint_y: None
-                        height: self.width
-                        allow_stretch: True
-                        keep_ratio: True
-
-                    MDLabel:
-                        text: "Captain Rex Suit"
-                        halign: "center"
-                        size_hint_y: None
-                        height: "20dp"
 
 
 <FightScreen>:

@@ -40,7 +40,7 @@ class MarbleChampionsApp(MDApp):
         #self.theme_cls.theme_style = "Light"
 
         #Dark Mode
-        self.theme_cls.primary_palette = "DeepPurple"
+        self.theme_cls.primary_palette = "Red"
         self.theme_cls.primary_hue = "400"
         self.theme_cls.theme_style = "Dark"
 
