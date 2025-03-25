@@ -8,7 +8,7 @@ from kivymd.app import MDApp
 #Used to reference the widgets in .kv and keep the positions
 from kivy.uix.floatlayout import FloatLayout
 #Used for changing screens
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import ScreenManager, Screen,SlideTransition
 #used to set screen size
 from kivy.core.window import Window
 
@@ -50,8 +50,14 @@ class MarbleChampionsApp(MDApp):
         self.sm.add_widget(FightScreen(name='fight'))
         return self.sm
 
-    def go_home(self):
-        self.sm.current = 'home'
+    def go_lobby(self):
+        self.sm.transition = SlideTransition(direction='left')
+        self.sm.current = 'lobby'
+
+
+    def go_back(self):
+        self.sm.transition = SlideTransition(direction='right')
+        self.sm.current = self.sm.previous()
 
 if __name__ == '__main__':
     MarbleChampionsApp().run()

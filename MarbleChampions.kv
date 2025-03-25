@@ -24,7 +24,7 @@
                 pos_hint: {"center_x":0.5, "center_y":0.25}
                 text: "play"
                 font_size: "20sp"
-                on_press: app.root.current = 'lobby'
+                on_press: app.go_lobby()
                 md_bg_color: 1, 1, 1, 1  # Change background color to white
                 text_color: 0, 0, 0, 1  # Change text color to black
 
@@ -34,15 +34,28 @@
         FloatLayout:
             MDTopAppBar:
                 left_action_items: [["home", lambda x: app.go_home()]]
+                title:" "
                 pos_hint: {"top": 1}
             Image:
-                source: 'Butt background.jpg.avif'
+                source: 'buttPoopDuty.jpg'
                 allow_stretch: True
                 keep_ratio: False  # Allow the image to stretch and fill the screen
                 size_hint: 1, 1  # Fill the entire screen
                 pos_hint: {"center_x": 0.5, "center_y": 0.5}  # Center the image
-
-
+            MDRectangleFlatButton:
+                adaptive_size: True
+                pos_hint: {"center_x": 0.1, "center_y": 0.95}
+                text: "Back"
+                font_size: "20sp"
+                on_press: app.go_back()
+                md_bg_color: 1, 1, 1, 1
+                text_color: 0, 0, 0, 1
+            Image:
+                source: 'poopy podiam.png'
+                allow_stretch: False
+                keep_ratio: True  # Allow the image to stretch and fill the screen
+                #size_hint: 1, 1  # Fill the entire screen
+                pos_hint: {"center_x": 0.5, "center_y": 0.1}  # Center the image
 
 <FightScreen>:
     id: fight
