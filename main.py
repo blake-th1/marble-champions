@@ -54,7 +54,9 @@ class MarbleChampionsApp(MDApp):
         self.sm.transition = SlideTransition(direction='left')
         self.sm.current = 'lobby'
 
-
+    def go_fight(self):
+        self.sm.transition = SlideTransition(direction='left')
+        self.sm.current = 'fight'
     def go_back(self):
         self.sm.transition = SlideTransition(direction='right')
         self.sm.current = self.sm.previous()
