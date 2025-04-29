@@ -2,7 +2,7 @@
 from kivy.uix.behaviors import TouchRippleBehavior
 from kivymd.uix.label import MDLabel, MDIcon
 from kivymd.uix.button import MDRectangleFlatButton
-
+from kivy.uix.image import Image
 # used for most MD apps
 from kivymd.app import MDApp
 #Used to reference the widgets in .kv and keep the positions
@@ -57,9 +57,22 @@ class MarbleChampionsApp(MDApp):
     def go_fight(self):
         self.sm.transition = SlideTransition(direction='left')
         self.sm.current = 'fight'
+
+    def on_start(self):
+         Window.bind(on_key_down=self.on_key_down)
+
+
+
+    def on_key_down(self, window, key, *args):
+        if key == 276:   # Left arrow key code
+            loki_image = self.root.ids.loki_image
+            loki_image.moveLeft()
+
     def go_back(self):
         self.sm.transition = SlideTransition(direction='right')
         self.sm.current = self.sm.previous()
-
+class lokiChester(Image):
+    def moveLeft(self):
+        self.pos = (self.pos[0] - 10, self.pos[1])
 if __name__ == '__main__':
     MarbleChampionsApp().run()
